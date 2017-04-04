@@ -26,11 +26,12 @@ ENV gid $gid
 # So it is owned by root and has the permissions vncserver seems to require:
 RUN mkdir /tmp/.X11-unix && chmod 1777 /tmp/.X11-unix/
 
-RUN groupadd ath-user -g $gid && \
+RUN ( getent group $gid || groupadd ath-user -g $gid ) && \
     useradd ath-user -u $uid -g $gid -m -d /home/ath-user
 
 # TODO seems this can be picked up from the host, which is unwanted:
 ENV XAUTHORITY /home/ath-user/.Xauthority
+ENV VNC_SECURITY_TYPES VncAuth,TLSVnc,TLSPlain
 
 USER ath-user
 RUN mkdir /home/ath-user/.vnc && (echo ath-user; echo ath-user) | vncpasswd /home/ath-user/.vnc/passwd

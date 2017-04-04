@@ -31,7 +31,7 @@ it's own sandboxed workspace.
 * [Using a http proxy](docs/USING-A-HTTP-PROXY.md)
 * [Prelaunch JUT](docs/PRELAUNCH.md)
 * [Obtaining a report of plugins that were exercised](docs/EXERCISEDPLUGINSREPORTER.md)
-* [Managing the versions of Jenkins and plugins](docs/SUT-VERSIONS.md)
+* [Managing the versions of Jenkins and plugins](docs/SUT-VERSIONS.md). This includes things like running the ATH with a local build of a plugin.
 * [Investigation](docs/INVESTIGATION.md)
 * [Running tests in container](docs/DOCKER.md)
 * Selecting tests based on plugins they cover (TODO)
