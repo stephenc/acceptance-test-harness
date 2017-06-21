@@ -10,16 +10,14 @@ It can use jenkins.war from local maven repository or download it when missing.
 BROWSER: Value for BROWSER variable
 JENKINS: Path to the jenkins.war, Jenkins version of one of "latest", "latest-rc", "lts" and "lts-rc"
 
-Examples:
+You almost always want to provide a "-Dtest=..." argument that limits the tests launched as you will
+be attaching a debugger.
 
-# Run full suite in FF against ./jenkins.war.
-$ ./run firefox ./jenkins.war
+Example:
 
-# Run Ant plugin test in chrome against Jenkins 1.512.
-$ ./run chrome 1.512 -Dtest=AntPluginTest
+# Debug Ant plugin test in chrome against Jenkins 1.512.
+$ ./debug.sh chrome 1.512 -Dtest=AntPluginTest
 
-# Run full suite in FF against LTS release candidate
-$ ./run firefox lts-rc
 USAGE
   exit -2
 fi
